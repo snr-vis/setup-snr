@@ -26,7 +26,7 @@ colorlinks: true
 docker pull paulklemm/snr
 docker run -t -d \
     -p 8080:8080 \
-    -v sonar:/home/opencpu/sonar \
+    -v $(pwd)/sonar:/home/opencpu/sonar \
     --name opencpu_rstudio \
     paulklemm/snr
 ```
@@ -40,7 +40,7 @@ docker pull paulklemm/snr
 docker run -t -d \
     -p 8080:8080 \
     -p 8004:8004 \
-    -v sonar:/home/opencpu/sonar \
+    -v $(pwd)/sonar:/home/opencpu/sonar \
     --name opencpu_rstudio \
     paulklemm/snr
 ```
@@ -68,7 +68,7 @@ make download-all-public-files
 docker pull paulklemm/snr
 docker run -t -d \
     -p 8080:8080 \
-    -v sonar:/home/opencpu/sonar \
+    -v $(pwd)/sonar:/home/opencpu/sonar \
     --name opencpu_rstudio \
     paulklemm/snr
 ```
