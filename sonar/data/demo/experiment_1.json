@@ -1,0 +1,32 @@
+{
+  "mapping": {
+    "EnsemblID": "id",
+    "fc": "log2FoldChange",
+    "pValue": "pvalue",
+    "pValueAdj": "padj",
+    "baseMeanSample": "baseMeanSample",
+    "baseMeanControl": "baseMeanControl",
+    "baseMean": "baseMean"
+  },
+  "regex": {
+    "FPKM": "value_."
+  },
+  "metadata": {
+    "PairID": 2034,
+    "ControlLabel": "fraction:Soma",
+    "SampleLabel": "fraction:Neurite",
+    "Accession": "E-MTAB-4978",
+    "SampleID": "ERR1551315",
+    "Organism": "Mus musculus",
+    "ExperimentType": "RNA-seq of coding RNA",
+    "ArrayExpressURL": "https://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-4978/",
+    "Name": "RNA localization is a key determinant of neurite-enriched proteome - RNAseq",
+    "ReleaseDate": "2017-07-23",
+    "Description": "RNA localization and local translation are important biological processes that underlie establishment of body axis, cell migration and synaptic plasticity. However, it is unclear to which extent mRNA localization contributes toward local proteome and how much of protein localization is achieved via protein transport or local translation of uniformly distributed mRNAs. To address this question, we performed genome-wide analysis of the local proteome, transcriptome, and translation rates in neurites and cell bodies of neurons differentiated from mouse embryonic stem cells.",
+    "PublicationAuthors": null,
+    "PublicationTitle": null,
+    "PublicationDOI": null,
+    "PublicationPublication": null,
+    "PublicationYear": null
+  }
+}

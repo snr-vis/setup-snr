@@ -1,0 +1,32 @@
+{
+  "mapping": {
+    "EnsemblID": "id",
+    "fc": "log2FoldChange",
+    "pValue": "pvalue",
+    "pValueAdj": "padj",
+    "baseMeanSample": "baseMeanSample",
+    "baseMeanControl": "baseMeanControl",
+    "baseMean": "baseMean"
+  },
+  "regex": {
+    "FPKM": "value_."
+  },
+  "metadata": {
+    "PairID": 2063,
+    "ControlLabel": "stimulus:Tumor Necrosis Factor",
+    "SampleLabel": "stimulus:none",
+    "Accession": "E-MTAB-4786",
+    "SampleID": "ERR1457356",
+    "Organism": "Mus musculus",
+    "ExperimentType": "RNA-seq of coding RNA",
+    "ArrayExpressURL": "https://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-4786/",
+    "Name": "Transcription profiling by high throughput sequencing of CD8 single positive thymocytes from F5 Rag1KO TCR transgenic mice stimulated with tumor necrosis factor",
+    "ReleaseDate": "2017-07-05",
+    "Description": "CD8 SP Thymocytes were sorted from F5 Rag1KO TCR transgenic mice and stimulated for 4 hr with 30ng/ml TNF (samples 8-11). Controls were samples either purified thymocytes left untreated (samples 1-3), or cultured for 4 hr with the addition of PBS vehicle alone (Samples 4-7).",
+    "PublicationAuthors": null,
+    "PublicationTitle": null,
+    "PublicationDOI": null,
+    "PublicationPublication": null,
+    "PublicationYear": null
+  }
+}
