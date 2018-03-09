@@ -73,6 +73,12 @@ docker run -t -d \
     paulklemm/snr
 ```
 
+## Download public data
+
+The public data is available here **TODO LINK**.
+
+To add it to the bootstrap file system of this repository run `make` which will download the files to `<repo-path>/sonar/data/quickngs`.
+
 ## Generate User file
 
 The server's API allows the create a user file by specifying path and password by calling: `http://<url_to_server>:<port>/api/makeuserfilejson?pw=mypassword&path=/home/opencpu/sonar/data`. You can use the response to create or edit the user files.
