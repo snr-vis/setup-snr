@@ -13,3 +13,4 @@ The only dependency for s·nr is docker. Please find the installation files for 
 
 ## Download required files
 
+Go to [https://github.com/snr-vis/setup-snr](https://github.com/snr-vis/setup-snr) and either clone the repository or download it as a zip.
