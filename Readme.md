@@ -33,6 +33,25 @@ docker run -t -d \
 
 * Setting up the docker image can take a minute, depending on the system
 
+Should you choose to expose the `OpenCPU` and `RStudio` instance running on the docker image, you can do so with the following call:
+
+```bash
+docker pull paulklemm/snr
+docker run -t -d \
+    -p 8080:8080 \
+    -p 8004:8004 \
+    -v sonar:/home/opencpu/sonar \
+    --name opencpu_rstudio \
+    paulklemm/snr
+```
+
+**This is not recommended and should only be used for development purposes** because the `R` session of `OpenCPU` can access the whole docker file image and therefore all data stored there.
+
+You find the servers at the following paths:
+
+* `<ip-of-docker-host-machine>:<port>/ocpu` (e.g. [http://localhost:8004/ocpu/](http://localhost:8004/ocpu/))
+* `<ip-of-docker-host-machine>:<port>/rstudio` (e.g. [http://localhost:8004/rstudio/](http://localhost:8004/rstudio/))
+
 ## Quickstart: Example script to start
 
 This script requires a Unix (e.g. `macOS` or `Linux`) system with a running docker instance. It will download this repository and initialize s·nr.
