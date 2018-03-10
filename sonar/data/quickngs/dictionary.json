@@ -1,17 +1,18 @@
 {
-  "mapping": {
-    "EnsemblID": "id",
-    "fc": "log2FoldChange",
-    "pValue": "pvalue",
-    "pValueAdj": "padj",
-    "baseMeanSample": "baseMeanSample",
-    "baseMeanControl": "baseMeanControl",
-    "baseMean": "baseMean"
-  },
-  "regex": {
-    "FPKM": "value_."
-  },
-  "metadata": {
-    "no_medata": "no metadata for this file"
-  }
+	"mapping": {
+		"EnsemblID": "id",
+		"fc": "log2FoldChange",
+		"pValue": "pvalue",
+		"pValueAdj": "padj",
+		"baseMeanSample": "baseMeanSample",
+		"baseMeanControl": "baseMeanControl",
+                "baseMean": "baseMean"
+	},
+	"regex": {
+		"FPKM": "value_."
+	},
+	"metadata": {
+		"bla": "WOhoooo",
+		"blubber": "ajsadshshajkd"
+	}
 }
