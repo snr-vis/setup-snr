@@ -60,6 +60,7 @@ You find the servers at the following paths:
 
 * `<ip-of-docker-host-machine>:<port>/ocpu` (e.g. [http://localhost:8004/ocpu/](http://localhost:8004/ocpu/))
 * `<ip-of-docker-host-machine>:<port>/rstudio` (e.g. [http://localhost:8004/rstudio/](http://localhost:8004/rstudio/))
+  * Login for RStudio User/PW: `opencpu`/`opencpu`
 
 ## Quickstart: Example script to start
 
@@ -103,3 +104,17 @@ The server's API allows the create a user file by specifying path and password b
 ## Additional Information
 
 Please refer to the readme of the `snr` repository ([https://github.com/snr-vis/snr](https://github.com/snr-vis/snr)) for more details.
+
+## Source Repositories of s·nr
+
+Home of the repositories is [https://github.com/snr-vis](https://github.com/snr-vis).
+
+The source code of s·nr is distributed on these repositories:
+
+| Link                                                                                     | Description                                                                                                 |
+| ---------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| [https://github.com/snr-vis/snr](https://github.com/snr-vis/snr)                         | `Node.js` back-end server and `React` front-end                                                             |
+| [https://github.com/snr-vis/snr-docker](https://github.com/snr-vis/snr-docker)           | `Dockerfile` for creating the docker image                                                                  |
+| [https://github.com/snr-vis/snrgo](https://github.com/snr-vis/snrgo)                     | GO-term analysis `R` back-end package                                                                       |
+| [https://github.molgen.mpg.de/paulklemm/snR](https://github.molgen.mpg.de/paulklemm/snR) | `R` back-end package. _This lies on a enterprise github because it requires GIT Large File Storage support_ |
+| [https://github.com/snr-vis/setup-snr](https://github.com/snr-vis/setup-snr)             |  Setup instructions for running a s·nr instance                                                             |
