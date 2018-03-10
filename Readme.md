@@ -63,7 +63,7 @@ cd ~/snr
 git clone https://github.com/snr-vis/setup-snr
 cd setup-snr
 # Download all public files
-make download-all-public-files
+make download_public_data
 # Run the docker instance
 docker pull paulklemm/snr
 docker run -t -d \
