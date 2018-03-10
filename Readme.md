@@ -35,7 +35,9 @@ docker run -t -d \
     paulklemm/snr
 ```
 
-Setting up the docker image can take a minute, depending on the system. You can now access s·nr under **[http://localhost:3000/](http://localhost:3000/)**.
+* Setting up the docker image can take a minute, depending on the system
+* You can now access s·nr under **[http://localhost:3000/](http://localhost:3000/)**
+* Login: `user: demo | pw: demo`
 
 Should you choose to expose the `OpenCPU` and `RStudio` instance running on the docker image, you can do so with the following call:
 
