@@ -14,31 +14,38 @@ colorlinks: true
 
 * The only dependency for s·nr is docker. Please find the installation files for your system here: [https://www.docker.com/community-edition](https://www.docker.com/community-edition).
 * Make sure to have at least `10-15 GB` of memory available for docker
+* The public files occupy `7 GB` of disk space
 
 ## Download required files
 
 ![Download zip file of the project using GitHubs download function.](images/download_zip_arrow.png){#fig:download_zip}
 
 * Go to [https://github.com/snr-vis/setup-snr](https://github.com/snr-vis/setup-snr) and _either_ clone the repository or download it as a zip (Fig. @fig:download_zip.).
-* Go into the path of the downloaded repository and run the following docker call:
+* Go into the path of the downloaded repository and run the following commands:
 
 ```bash
+# Download the public files
+make
+# Run docker
 docker pull paulklemm/snr
 docker run -t -d \
-    -p 8080:8080 \
+    -p 3000:85 \
     -v $(pwd)/sonar:/home/opencpu/sonar \
     --name opencpu_rstudio \
     paulklemm/snr
 ```
 
-* Setting up the docker image can take a minute, depending on the system
+Setting up the docker image can take a minute, depending on the system. You can now access s·nr under **[http://localhost:3000/](http://localhost:3000/)**.
 
 Should you choose to expose the `OpenCPU` and `RStudio` instance running on the docker image, you can do so with the following call:
 
 ```bash
+# Download the public files
+make
+# Run docker
 docker pull paulklemm/snr
 docker run -t -d \
-    -p 8080:8080 \
+    -p 3000:85 \
     -p 8004:8004 \
     -v $(pwd)/sonar:/home/opencpu/sonar \
     --name opencpu_rstudio \
@@ -63,11 +70,11 @@ cd ~/snr
 git clone https://github.com/snr-vis/setup-snr
 cd setup-snr
 # Download all public files
-make download_public_data
+make
 # Run the docker instance
 docker pull paulklemm/snr
 docker run -t -d \
-    -p 8080:8080 \
+    -p 3000:85 \
     -v $(pwd)/sonar:/home/opencpu/sonar \
     --name opencpu_rstudio \
     paulklemm/snr
