@@ -28,7 +28,7 @@ colorlinks: true
 # Download the public files
 make
 # Run docker
-docker pull paulklemm/snr
+docker pull paulklemm/snr:paperrelease
 docker run -t -d \
     -p 85:85 \
     -v $(pwd)/sonar:/home/opencpu/sonar \
@@ -46,7 +46,7 @@ Should you choose to expose the `OpenCPU` and `RStudio` instance running on the 
 # Download the public files
 make
 # Run docker
-docker pull paulklemm/snr
+docker pull paulklemm/snr:paperrelease
 docker run -t -d \
     -p 85:85 \
     -p 8004:8004 \
@@ -76,7 +76,7 @@ cd setup-snr
 # Download all public files
 make
 # Run the docker instance
-docker pull paulklemm/snr
+docker pull paulklemm/snr:paperrelease
 docker run -t -d \
     -p 85:85 \
     -v $(pwd)/sonar:/home/opencpu/sonar \
