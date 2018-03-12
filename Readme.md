@@ -86,9 +86,27 @@ docker run -t -d \
 
 ## Download public data
 
-The public data is available here **TODO LINK**.
+The public data is available here [https://owncloud.sf.mpg.de/index.php/s/mcFYfHN2UMfbjcJ/download](https://owncloud.sf.mpg.de/index.php/s/mcFYfHN2UMfbjcJ/download).
 
 To add it to the bootstrap file system of this repository run `make` which will download the files to `<repo-path>/sonar/data/quickngs`.
+
+## Run Node.js Server and Front-End in Developer Mode
+
+For development it prooves easier to run a instance of the `node.js` server and the react front-end app outside of the `docker` container.
+
+For this you are required to run a docker instance exposing the `OpenCPU/RStudio` port using:
+
+```bash
+docker run -t -d \
+    -p 8004:8004 \
+    -v $(pwd)/sonar:/home/opencpu/sonar \
+    --name snr \
+    paulklemm/snr
+```
+
+Now, clone the `node.js` and front-end repo [https://github.com/snr-vis/snr](https://github.com/snr-vis/snr) and edit the `server_settings.json` to point to the appropriate OpenCPU path (edit `"opencpuPath": "http://localhost:8004"` line).
+
+If you run the docker image on a separate machine that is behind a firewall you might forward the port using a command like `ssh -L 8004:localhost:8004 pklemm@aligner cat` to map the port to your `localhost`.
 
 ## Generate User file
 
