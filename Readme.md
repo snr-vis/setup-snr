@@ -10,14 +10,16 @@ colorlinks: true
 
 **Always up-to date installation instructions are located in [https://github.com/snr-vis/setup-snr](https://github.com/snr-vis/setup-snr)**
 
-## Requirements
+## Setup
+
+### Requirements
 
 * The only dependency for s·nr is docker. Please find the installation files for your system here: [https://www.docker.com/community-edition](https://www.docker.com/community-edition).
 * Make sure to have at least `10-15 GB` of memory available for docker
 * The public files occupy `7 GB` of disk space
 * We recommend using s·nr with [Google Chrome](https://www.google.com/chrome/index.html)
 
-## Download required files
+### Download Required Files
 
 ![Download zip file of the project using GitHubs download function.](images/download_zip_arrow.png){#fig:download_zip}
 
@@ -63,7 +65,7 @@ You find the servers at the following paths:
 * `<ip-of-docker-host-machine>:<port>/rstudio` (e.g. [http://localhost:8004/rstudio/](http://localhost:8004/rstudio/))
   * Login for RStudio User/PW: `opencpu`/`opencpu`
 
-## Quickstart: Example script to start
+### Quickstart: Example Script
 
 This script requires a Unix (e.g. `macOS` or `Linux`) system with a running docker instance. It will download this repository and initialize s·nr.
 
@@ -84,13 +86,15 @@ docker run -t -d \
     paulklemm/snr
 ```
 
-## Download public data
+### Download public data
 
 The public data is available here [https://owncloud.sf.mpg.de/index.php/s/mcFYfHN2UMfbjcJ/download](https://owncloud.sf.mpg.de/index.php/s/mcFYfHN2UMfbjcJ/download).
 
 To add it to the bootstrap file system of this repository run `make` which will download the files to `<repo-path>/sonar/data/quickngs`.
 
-## Run Node.js Server and Front-End in Developer Mode
+## Development
+
+### Run Node.js Server and Front-End in Developer Mode
 
 For development it prooves easier to run a instance of the `node.js` server and the react front-end app outside of the `docker` container.
 
@@ -108,17 +112,23 @@ Now, clone the `node.js` and front-end repo [https://github.com/snr-vis/snr](htt
 
 If you run the docker image on a separate machine that is behind a firewall you might forward the port using a command like `ssh -L 8004:localhost:8004 pklemm@aligner cat` to map the port to your `localhost`.
 
-## Generate User file
+## Administration
+
+### Generate User File
 
 The server's API allows the create a user file by specifying path and password by calling: `http://<url_to_server>:<port>/api/makeuserfilejson?pw=mypassword&path=/home/opencpu/sonar/data`. You can use the response to create or edit the user files.
 
-### Workflow for creating a new user
+### Create new User Workflow
 
 1.  Create a new folder for the user in the folder that is linked to the `docker` `R` back-end and add the data there
 1.  Create a `dictionary.json` file in that folder (see [Structure of Data and OpenCPU Sessions](#structure-of-data-and-opencpu-sessions))
 1.  Check `server_settings.json` file where the user configuration files are
 1.  Go to this directory and save the output of `http://<url_to_server>:<port>/api/makeuserfilejson?pw=<user_password>&path=<path_to_data_on_r_back_end>` to `<username>.json`
 1.  Log in to sonar with the new account
+
+### Adding Data
+
+Create a folder for the user that matches the path in the user configuration file and add the data here. Note that the folder should contain a `dictionary.json` file for fallback settings for all files within this folder. You can also add custom dictionary files per dataset by creating a `.json` dictionary with the same name as the added file. See the `demo` user folder for an example.
 
 ## Additional Information
 
@@ -130,10 +140,10 @@ Home of the repositories is [https://github.com/snr-vis](https://github.com/snr-
 
 The source code of s·nr is distributed on these repositories:
 
-| Link                                                                                     | Description                                                                                                 |
-| ---------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| [https://github.com/snr-vis/snr](https://github.com/snr-vis/snr)                         | `Node.js` back-end server and `React` front-end                                                             |
-| [https://github.com/snr-vis/snr-docker](https://github.com/snr-vis/snr-docker)           | `Dockerfile` for creating the docker image                                                                  |
-| [https://github.com/snr-vis/snrgo](https://github.com/snr-vis/snrgo)                     | GO-term analysis `R` back-end package                                                                       |
-| [https://github.molgen.mpg.de/paulklemm/snR](https://github.molgen.mpg.de/paulklemm/snR) | `R` back-end package. _This lies on a enterprise github because it requires GIT Large File Storage support_ |
-| [https://github.com/snr-vis/setup-snr](https://github.com/snr-vis/setup-snr)             |  Setup instructions for running a s·nr instance                                                             |
+| Link                                                                                     | Description                                                                                          |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| [https://github.com/snr-vis/snr](https://github.com/snr-vis/snr)                         | `Node.js` back-end server and `React` front-end                                                      |
+| [https://github.com/snr-vis/snr-docker](https://github.com/snr-vis/snr-docker)           | `Dockerfile` for creating the docker image                                                           |
+| [https://github.com/snr-vis/snrgo](https://github.com/snr-vis/snrgo)                     | GO-term analysis `R` back-end package                                                                |
+| [https://github.molgen.mpg.de/paulklemm/snR](https://github.molgen.mpg.de/paulklemm/snR) | `R` back-end package. _Repo on enterprise github because GIT Large File Storage support requirement_ |
+| [https://github.com/snr-vis/setup-snr](https://github.com/snr-vis/setup-snr)             |  Setup instructions for running a s·nr instance                                                      |
