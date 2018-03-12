@@ -112,6 +112,10 @@ Now, clone the `node.js` and front-end repo [https://github.com/snr-vis/snr](htt
 
 If you run the docker image on a separate machine that is behind a firewall you might forward the port using a command like `ssh -L 8004:localhost:8004 pklemm@aligner cat` to map the port to your `localhost`.
 
+### Launching Server application with PM2
+
+The [docker container](https://github.com/snr-vis/snr-docker) launches the `node.js` server as well as the `react` front-end using the [PM2](http://pm2.keymetrics.io) process manager. `PM2` can also be used for developement, whereas `pm2 monit` and `pm2 status` are most valuable tools to track console outputs and error messages of the processes. See details in the [dockerfile](https://github.com/snr-vis/snr-docker) on how to start `pm2`.
+
 ## Administration
 
 ### Generate User File
