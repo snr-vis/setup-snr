@@ -35,7 +35,7 @@ docker run -t -d \
     -p 85:85 \
     -v $(pwd)/sonar:/home/opencpu/sonar \
     --name snr \
-    paulklemm/snr
+    paulklemm/snr:paperrelease
 ```
 
 * Setting up the docker image can take a minute, depending on the system
@@ -54,7 +54,7 @@ docker run -t -d \
     -p 8004:8004 \
     -v $(pwd)/sonar:/home/opencpu/sonar \
     --name snr \
-    paulklemm/snr
+    paulklemm/snr:paperrelease
 ```
 
 **This is not recommended and should only be used for development purposes** because the `R` session of `OpenCPU` can access the whole docker file image and therefore all data stored there.
@@ -83,7 +83,7 @@ docker run -t -d \
     -p 85:85 \
     -v $(pwd)/sonar:/home/opencpu/sonar \
     --name snr \
-    paulklemm/snr
+    paulklemm/snr:paperrelease
 ```
 
 ### Download public data
@@ -105,7 +105,7 @@ docker run -t -d \
     -p 8004:8004 \
     -v $(pwd)/sonar:/home/opencpu/sonar \
     --name snr \
-    paulklemm/snr
+    paulklemm/snr:paperrelease
 ```
 
 Now, clone the `node.js` and front-end repo [https://github.com/snr-vis/snr](https://github.com/snr-vis/snr) and edit the `server_settings.json` to point to the appropriate OpenCPU path (edit `"opencpuPath": "http://localhost:8004"` line).
