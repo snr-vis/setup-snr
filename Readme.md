@@ -1,5 +1,5 @@
 ---
-title: "Setup s·nr"
+title: 'Setup s·nr'
 author: [Paul Klemm, Peter Frommolt, Jan-Wilhelm Kornfeld]
 date: 2018-03-08
 titlepage: true
@@ -14,17 +14,17 @@ colorlinks: true
 
 ### Requirements
 
-* The only dependency for s·nr is docker. Please find the installation files for your system here: [https://www.docker.com/community-edition](https://www.docker.com/community-edition).
-* Make sure to have at least `10-15 GB` of memory available for docker
-* The public files occupy `7 GB` of disk space
-* We recommend using s·nr with [Google Chrome](https://www.google.com/chrome/index.html)
+- The only dependency for s·nr is docker. Please find the installation files for your system here: [https://www.docker.com/community-edition](https://www.docker.com/community-edition).
+- Make sure to have at least `10-15 GB` of memory available for docker
+- The public files occupy `7 GB` of disk space
+- We recommend using s·nr with [Google Chrome](https://www.google.com/chrome/index.html)
 
 ### Download Required Files
 
 ![Download zip file of the project using GitHubs download function.](images/download_zip_arrow.png){#fig:download_zip}
 
-* Go to [https://github.com/snr-vis/setup-snr](https://github.com/snr-vis/setup-snr) and _either_ clone the repository or download it as a zip (Fig. @fig:download_zip.).
-* Go into the path of the downloaded repository and run the following commands:
+- Go to [https://github.com/snr-vis/setup-snr](https://github.com/snr-vis/setup-snr) and _either_ clone the repository or download it as a zip (Fig. @fig:download_zip.).
+- Go into the path of the downloaded repository and run the following commands:
 
 ```bash
 # Download the public files
@@ -38,9 +38,9 @@ docker run -t -d \
     paulklemm/snr:paperrelease
 ```
 
-* Setting up the docker image can take a minute, depending on the system
-* You can now access s·nr under **[http://localhost:85/](http://localhost:85/)**
-* Login: `user: demo | pw: demo`
+- Setting up the docker image can take a minute, depending on the system
+- You can now access s·nr under **[http://localhost:85/](http://localhost:85/)**
+- Login: `user: demo | pw: demo`
 
 Should you choose to expose the `OpenCPU` and `RStudio` instance running on the docker image, you can do so with the following call:
 
@@ -61,9 +61,9 @@ docker run -t -d \
 
 You find the servers at the following paths:
 
-* `<ip-of-docker-host-machine>:<port>/ocpu` (e.g. [http://localhost:8004/ocpu/](http://localhost:8004/ocpu/))
-* `<ip-of-docker-host-machine>:<port>/rstudio` (e.g. [http://localhost:8004/rstudio/](http://localhost:8004/rstudio/))
-  * Login for RStudio User/PW: `opencpu`/`opencpu`
+- `<ip-of-docker-host-machine>:<port>/ocpu` (e.g. [http://localhost:8004/ocpu/](http://localhost:8004/ocpu/))
+- `<ip-of-docker-host-machine>:<port>/rstudio` (e.g. [http://localhost:8004/rstudio/](http://localhost:8004/rstudio/))
+  - Login for RStudio User/PW: `opencpu`/`opencpu`
 
 ### Quickstart: Example Script
 
@@ -112,9 +112,24 @@ Now, clone the `node.js` and front-end repo [https://github.com/snr-vis/snr](htt
 
 If you run the docker image on a separate machine that is behind a firewall you might forward the port using a command like `ssh -L 8004:localhost:8004 pklemm@aligner cat` to map the port to your `localhost`.
 
-### Launching Server application with PM2
+### Launching Server Application with PM2
 
 The [docker container](https://github.com/snr-vis/snr-docker) launches the `node.js` server as well as the `react` front-end using the [PM2](http://pm2.keymetrics.io) process manager. `PM2` can also be used for developement, whereas `pm2 monit` and `pm2 status` are most valuable tools to track console outputs and error messages of the processes. See details in the [dockerfile](https://github.com/snr-vis/snr-docker) on how to start `pm2`.
+
+### Show Server Logs
+
+Error messages are printed out by `PM2`.
+To access them, please attach a `pm2 monit` session to the already running docker container using the following command (assuming the name of the docker container is "snr"):
+
+```bash
+docker exec -it snr pm2 monit
+```
+
+To see if `pm2` is running properly, run:
+
+```bash
+docker exec -it snr pm2 status
+```
 
 ## Administration
 
