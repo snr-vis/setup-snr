@@ -86,6 +86,10 @@ docker run -t -d \
     paulklemm/snr:paperrelease
 ```
 
+### Monitor Docker Container
+
+We recommend `ctop` ([https://ctop.sh/](https://ctop.sh/)) for monitoring the activity and memory usage of docker container.
+
 ### Download public data
 
 The public data is available here [https://owncloud.sf.mpg.de/index.php/s/mcFYfHN2UMfbjcJ/download](https://owncloud.sf.mpg.de/index.php/s/mcFYfHN2UMfbjcJ/download).
