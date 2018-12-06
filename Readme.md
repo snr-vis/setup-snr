@@ -92,7 +92,7 @@ We recommend `ctop` ([https://ctop.sh/](https://ctop.sh/)) for monitoring the ac
 
 ### Download public data
 
-The public data is available here [https://edmond.mpdl.mpg.de/imeji/collection/RVILY1vK1naj8au9?](https://edmond.mpdl.mpg.de/imeji/collection/RVILY1vK1naj8au9?).
+The public data is available here [https://edmond.mpdl.mpg.de/imeji/collection/RVILY1vK1naj8au9](https://edmond.mpdl.mpg.de/imeji/collection/RVILY1vK1naj8au9).
 
 To add it to the bootstrap file system of this repository run `make` which will download the files to `<repo-path>/sonar/data/quickngs`.
 
